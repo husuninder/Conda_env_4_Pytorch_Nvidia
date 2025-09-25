@@ -1,0 +1,43 @@
+# source: https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-25-03.html
+
+name: nvidia_pytorch_25_03
+channels:
+  - nvidia
+  - pytorch
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Python version (container uses Python 3.12) :contentReference[oaicite:1]{index=1}
+  - python=3.12
+
+  # CUDA / GPU stack (based on container spec) :contentReference[oaicite:2]{index=2}
+  - cudatoolkit=12.8.1       # runtime CUDA version in the container
+  - cudnn=9.8.0              # cuDNN matching container spec
+  - nccl                     # for distributed / multi-GPU support
+
+  # PyTorch + GPU build
+  - pytorch=2.7.0a0          # matches container’s PyTorch version :contentReference[oaicite:3]{index=3}
+  - pytorch-cuda=12.8        # ensures GPU build for CUDA 12.8
+  - torchvision              # version aligned automatically with PyTorch
+  - torchaudio               # optional, if you need audio support
+  - torchtext                 # if needed (check whether container includes it)  
+  - torchdata                # similarly if needed
+
+  # Other Nvidia / ML ecosystem libs (optional, depending on your work)
+  - tensorrt=10.9.0           # TensorRT in container :contentReference[oaicite:4]{index=4}
+  - torch-tensorrt=2.7.0a0    # matching TensorRT integration :contentReference[oaicite:5]{index=5}
+  - dali=1.47                 # NVIDIA DALI version in container :contentReference[oaicite:6]{index=6}
+  - transformerengine=2.1     # in container spec :contentReference[oaicite:7]{index=7}
+
+  # Common ML / data libraries
+  - numpy
+  - scipy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - jupyterlab
+
+  # If your project has Python-only dependencies not available via conda
+  #- pip:
+  #  - your-other-python-packages
