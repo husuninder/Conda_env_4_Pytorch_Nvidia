@@ -40,5 +40,5 @@ dependencies:
 
   # Pip-only dependencies your project needs
   - pip:
-      - --extra-index-url https://developer.download.nvidia.com/compute/redist/ nvidia-dali-cuda120==1.33.0
+      - --extra-index-url https://developer.download.nvidia.com/compute/redist/ nvidia-dali-cuda120==1.33.0 # https://github.com/NVIDIA/DALI/releases/tag/v1.33.0 (conda only has versions starting from 1.40)
 
