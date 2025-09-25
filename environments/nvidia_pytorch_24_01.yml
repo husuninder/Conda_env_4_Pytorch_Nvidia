@@ -28,7 +28,7 @@ dependencies:
   # Additional NVIDIA / ecosystem libraries (optional, depending on your use case)
   - tensorrt=8.6.1.6               # TensorRT in container spec :contentReference[oaicite:5]{index=5}
   - torch-tensorrt=2.2.0a0         # matching version in container :contentReference[oaicite:6]{index=6}
-  - dali=1.33                      # NVIDIA DALI version in container :contentReference[oaicite:7]{index=7}
+  - nvidia-dali-python=1.33        # NVIDIA DALI version in container :contentReference[oaicite:7]{index=7}
   - transformerengine=1.2.1        # included in container :contentReference[oaicite:8]{index=8}
 
   # Standard ML / data packages
