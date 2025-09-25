@@ -13,7 +13,7 @@ dependencies:
   - pip
 
   # CUDA / GPU stack
-  - cudatoolkit=12.3.2           # container is based on CUDA 12.3.2 :contentReference[oaicite:2]{index=2}
+  - cuda-toolkit=12.3.2           # container is based on CUDA 12.3.2 :contentReference[oaicite:2]{index=2}
   - cudnn=8.9.7.29               # cuDNN version in container :contentReference[oaicite:3]{index=3}
   - nccl                          # for distributed GPU (if needed)
 
