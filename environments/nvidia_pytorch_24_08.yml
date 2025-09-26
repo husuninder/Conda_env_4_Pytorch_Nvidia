@@ -1,0 +1,44 @@
+# source: https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-24-08.html
+
+name: nvidia_pytorch_24_08
+channels:
+  - nvidia
+  - pytorch
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Base
+  - python=3.10
+  
+  # CUDA / GPU stack (from 24.08 container)  
+  - nvidia/label/cuda-12.6::cuda-toolkit       # container uses CUDA 12.6 :contentReference[oaicite:1]{index=1}
+  - cudnn=9.3.0.75                              # version given in release notes :contentReference[oaicite:2]{index=2}
+  - nccl=2.22.3                                 # as per container spec :contentReference[oaicite:3]{index=3}
+
+  # PyTorch & GPU integration
+  - pytorch=2.5.0a0                             # container specifies PyTorch 2.5.0a0 :contentReference[oaicite:4]{index=4}
+  - pytorch-cuda=12.6                          # ensures GPU-enabled build for CUDA 12.6
+  - torchvision
+  - torchaudio                                   # optional if you need audio support
+
+  # NVIDIA / ecosystem libs (as in 24.08 container)
+  - tensorrt=10.3.0.26                         # TensorRT version in container :contentReference[oaicite:5]{index=5}
+  - torch-tensorrt=2.5.0a0                     # matching version in container :contentReference[oaicite:6]{index=6}
+  - dali=1.40                                  # DALI version included in container :contentReference[oaicite:7]{index=7}
+  - transformerengine=1.9                      # version in container :contentReference[oaicite:8]{index=8}
+
+  # Common ML / data libraries
+  - numpy
+  - scipy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - jupyterlab
+
+  # pip-only / extra dependencies
+  - pip:
+      # If DALI pip package is needed or a specific build:
+      # - --extra-index-url https://developer.download.nvidia.com/compute/redist/
+      # - nvidia-dali-cuda126==1.40.0
+      - your_additional_python_packages_here
