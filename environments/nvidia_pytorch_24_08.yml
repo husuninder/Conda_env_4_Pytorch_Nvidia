@@ -12,7 +12,7 @@ dependencies:
   - python=3.10
   
   # CUDA / GPU stack (from 24.08 container)  
-  - nvidia/label/cuda-12.6::cuda-toolkit       # container uses CUDA 12.6 :contentReference[oaicite:1]{index=1}
+  - nvidia/label/cuda-12.6.3::cuda-toolkit      # container uses CUDA 12.6 :contentReference[oaicite:1]{index=1}
   - cudnn=9.3.0.75                              # version given in release notes :contentReference[oaicite:2]{index=2}
   - nccl=2.22.3                                 # as per container spec :contentReference[oaicite:3]{index=3}
 
