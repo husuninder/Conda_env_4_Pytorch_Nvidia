@@ -1,6 +1,9 @@
 name: pytorch-cuda-12.4
 channels:
   - defaults
+  - nvidia
+  - pytorch
+  - conda-forge
 dependencies:
   - python=3.12
   - pytorch-cuda=12.4
