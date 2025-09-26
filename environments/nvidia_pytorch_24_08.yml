@@ -1,4 +1,5 @@
 # source: https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-24-08.html
+# but changed pytorch from 2.5 to 2.7 
 
 name: nvidia_pytorch_24_08
 channels:
@@ -16,12 +17,6 @@ dependencies:
   - cudnn=9.3.0.75                              # version given in release notes :contentReference[oaicite:2]{index=2}
   - nccl=2.22.3                                 # as per container spec :contentReference[oaicite:3]{index=3}
 
-  # PyTorch & GPU integration
-  - pytorch=2.5.0a0                             # container specifies PyTorch 2.5.0a0 :contentReference[oaicite:4]{index=4}
-  - pytorch-cuda=12.6                          # ensures GPU-enabled build for CUDA 12.6
-  - torchvision
-  - torchaudio                                   # optional if you need audio support
-
   # NVIDIA / ecosystem libs (as in 24.08 container)
   - tensorrt=10.3.0.26                         # TensorRT version in container :contentReference[oaicite:5]{index=5}
   - torch-tensorrt=2.5.0a0                     # matching version in container :contentReference[oaicite:6]{index=6}
@@ -38,7 +33,9 @@ dependencies:
 
   # pip-only / extra dependencies
   - pip:
-      # If DALI pip package is needed or a specific build:
+      torch==2.7.0 --index-url https://download.pytorch.org/whl/cu126
+      torchvision==0.22.0 --index-url https://download.pytorch.org/whl/cu126
+      torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/cu126
       # - --extra-index-url https://developer.download.nvidia.com/compute/redist/
       # - nvidia-dali-cuda126==1.40.0
       - your_additional_python_packages_here
