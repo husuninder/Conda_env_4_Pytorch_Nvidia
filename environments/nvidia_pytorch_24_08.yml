@@ -1,6 +1,5 @@
 # source: https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-24-08.html
 # but changed pytorch from 2.5 to 2.7 
-
 name: nvidia_pytorch_24_08
 channels:
   - nvidia
