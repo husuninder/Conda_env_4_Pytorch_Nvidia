@@ -32,9 +32,9 @@ dependencies:
 
   # pip-only / extra dependencies
   - pip:
-      torch==2.7.0 --index-url https://download.pytorch.org/whl/cu126
-      torchvision==0.22.0 --index-url https://download.pytorch.org/whl/cu126
-      torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/cu126
+      - torch==2.7.0 --index-url https://download.pytorch.org/whl/cu126
+      - torchvision==0.22.0 --index-url https://download.pytorch.org/whl/cu126
+      - torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/cu126
       # - --extra-index-url https://developer.download.nvidia.com/compute/redist/
       # - nvidia-dali-cuda126==1.40.0
-      - your_additional_python_packages_here
+      # - your_additional_python_packages_here
