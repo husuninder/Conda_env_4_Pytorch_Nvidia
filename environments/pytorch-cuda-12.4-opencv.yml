@@ -1,6 +1,9 @@
 name: pytorch-cuda-opencv
 channels:
   - defaults
+  - nvidia
+  - pytorch
+  - conda-forge
 dependencies:
   - python=3.12
   - opencv
